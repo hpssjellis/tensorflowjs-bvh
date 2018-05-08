@@ -31,6 +31,10 @@ or
 http://www.makehuman.org/download.php
 
 
+Cool viewer at 
+
+http://herzig.github.io/BVHImporter/
+
 
 
 
