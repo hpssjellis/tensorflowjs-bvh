@@ -125,11 +125,6 @@ Frame Time: 0.033333
 
 
 
-
-//   document.getElementById('myBVH').value = JSON.stringify(myOriginal)
-//   document.getElementById('myBVH').value = JSON.stringify(myOriginal, null, 3)	
-	//document.getElementById('myJsonArea').value = JSON.stringify(weightsJSON2, null, 3)
-
 </script>
 
 
@@ -145,7 +140,8 @@ Frame Time: 0.033333
   myJSON = 	JSON.stringify(myOriginal, null, 3)
   						    
   myJSON.replace('Frames:    2', 'Frames:    '+document.getElementById('myNumber').value)						    
-  document.getElementById('myBVH').value = JSON.parse(myJSON)					       
+  document.getElementById('myBVH').value = myJSON										    
+ // document.getElementById('myBVH').value = JSON.parse(myJSON)					          
 }">
 
 
