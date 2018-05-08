@@ -64,3 +64,8 @@ checkout
 https://hpssjellis.github.io/tensorflowjs-bvh/wow.html
 
 
+
+https://hpssjellis.github.io/tensorflowjs-bvh/example.bvh
+
+
+
