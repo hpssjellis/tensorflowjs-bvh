@@ -1,5 +1,5 @@
 # tensorflowjs-bvh
-This is a guess that posenet and bvh were ment to be together
+This is a guess that posenet and bvh were meant to be together
 
 
 
