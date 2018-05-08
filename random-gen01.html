@@ -133,7 +133,7 @@ Frame Time: 0.033333
 </script>
 
 
-
+<input type=number id="myNumber" value=2>
 
 <input type=button value="Original" onclick="{
 
@@ -142,7 +142,10 @@ Frame Time: 0.033333
 
 
 <input type=button value="JSONed original" onclick="{
-  document.getElementById('myBVH').value = JSON.parse(JSON.stringify(myOriginal, null, 3))					       
+  myJSON = 	JSON.stringify(myOriginal, null, 3)
+  						    
+  myJSON.replace('Frames:    2', 'Frames:    '+document.getElementById('myNumber').value)						    
+  document.getElementById('myBVH').value = JSON.parse(myJSON)					       
 }">
 
 
