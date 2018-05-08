@@ -40,5 +40,10 @@ another generator
 
 http://www.akjava.com/demo/bvhplayer/
 
+I like this
+
+http://lo-th.github.io/olympe/BVH_player.html
+
+
 
 
