@@ -13,3 +13,24 @@ https://github.com/hpssjellis/beginner-tensorflowjs-examples-in-javascript/tree/
 
 Original tfjs-models code at 
 https://github.com/tensorflow/tfjs-models/tree/master/posenet/demos
+
+
+
+
+
+What's the point.
+
+Load the bvh onto premade models for   
+https://www.blender.org/download/
+
+
+Premade models can be got from  
+https://www.mixamo.com/#/
+
+or 
+http://www.makehuman.org/download.php
+
+
+
+
+
