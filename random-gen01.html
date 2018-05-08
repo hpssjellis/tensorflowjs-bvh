@@ -146,13 +146,19 @@ Frame Time: 0.033333
 }">
 
 
+<input type=button value="Generate-Random" onclick="{
+  myTemp = 0
+  for (myLoop = 0; myLoop <= 57; myLoop++){						    
+	myTemp += Math.floor(Math.random()*1000/100) + '   '					    
+  }						    
+    document.getElementById('myNewLine').value	 = myTemp					       
+}">
+
 
 
 <input type=button value="Add a line" onclick="{
 myString = document.getElementById('myBVH').value
 					       
-					       
-//alert( document.getElementById('myBVH').value[document.getElementById('myBVH').value.length-1])	
 
 myString = myString.substring(0, myString.length - 1)
 					       
