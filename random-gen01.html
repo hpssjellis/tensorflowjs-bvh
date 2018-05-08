@@ -139,12 +139,22 @@ Frame Time: 0.033333
 <input type=button value="Change Number Frames" onclick="{
   myJSON = myOriginal
   						    
-  myJSON.replace('Frames:    2', 'Frames:    6')						    
+  myJSON.replace('Frames: 2', 'Frames: 6')						    
   document.getElementById('myBVH').value = myJSON										    
  // document.getElementById('myBVH').value = JSON.parse(myJSON)					          
 }">
 
 
+<input type=button value="TO JSON" onclick="{
+									    
+document.getElementById('myBVH').value = JSON.stringify(myOriginal, null, 3)					          
+}">
+
+<input type=button value="FROM JSON" onclick="{
+
+document.getElementById('myBVH').value = JSON.parse(document.getElementById('myBVH').value)										    
+					          
+}">
 <input type=button value="Generate-Random" onclick="{
   myTemp = ' '
   for (myLoop = 1; myLoop <= 57; myLoop++){						    
