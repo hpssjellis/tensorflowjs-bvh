@@ -137,9 +137,9 @@ Frame Time: 0.033333
 
 
 <input type=button value="Change Number Frames" onclick="{
-  myJSON = 	JSON.stringify(myOriginal, null, 3)
+  myJSON = myOriginal
   						    
-  myJSON.replace('\nFrames:\t2\n', '\nFrames:\t8\n')						    
+  myJSON.replace('Frames:    2', 'Frames:    6')						    
   document.getElementById('myBVH').value = myJSON										    
  // document.getElementById('myBVH').value = JSON.parse(myJSON)					          
 }">
