@@ -15,17 +15,7 @@ https://hpssjellis.github.io/tensorflowjs-bvh/bvh-view.html
 
 
 
-Cool viewer at 
-
-http://herzig.github.io/BVHImporter/
-
-
-another generator
-
-http://www.akjava.com/demo/bvhplayer/
-
-I like this
-
+The BVH viewer that I like  
 http://lo-th.github.io/olympe/BVH_player.html
 
 
