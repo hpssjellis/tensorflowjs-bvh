@@ -179,7 +179,12 @@ myMotion[0][2] = document.getElementById('myFrameNumber').value
  myTemp += myMotion[0][3]+' '+ myMotion[0][4]+'\n'   	         //Frame Time: 0.033333
 							 
 
-///////////////////////////////////////// more here							 
+ for (myNums=1;  myNums <= document.getElementById('myFrameNumber').value myNums++){
+    for (myNums2=0;  myNums2 <= 27-1 myNums2++){
+	myTemp += myMotion[myNums][myNums2] + '\t'						 
+     }
+  myTemp +=	'\n'						 
+ }						 
 							 
  myString = document.getElementById('myBVH').value
 					       
