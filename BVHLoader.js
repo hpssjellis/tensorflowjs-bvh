@@ -8,6 +8,10 @@
  *
  */
 
+
+var THREE = THREE || {}    // sets up namespace if not already done
+
+
 THREE.BVHLoader = function ( manager ) {
 
 	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
