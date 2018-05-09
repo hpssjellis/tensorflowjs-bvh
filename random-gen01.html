@@ -162,7 +162,7 @@ myMotion[0][4] = 0.033333
 </script>
 
 
-<input type=number id="myNumber" value=2>
+<input type=number id="myFrameNumber" value=2>
 
 <input type=button value="Original" onclick="{
 
@@ -171,9 +171,12 @@ myMotion[0][4] = 0.033333
 
 
 <input type=button value="Change Number Frames" onclick="{
- myTemp = myMotion[0][0]+ '\n'                           //MOTION
+myMotion[0][2] = document.getElementById('myFrameNumber').value							 
+							 
+							 
+ myTemp = myMotion[0][0]+ '\n'                                   //MOTION
  myTemp += myMotion[0][1]+'    '+ myMotion[0][2]+'\n'            //Frames:    2
- myTemp += myMotion[0][3]+' '+ myMotion[0][4]+'\n'   	//Frame Time: 0.033333
+ myTemp += myMotion[0][3]+' '+ myMotion[0][4]+'\n'   	         //Frame Time: 0.033333
 							 
 
 ///////////////////////////////////////// more here							 
