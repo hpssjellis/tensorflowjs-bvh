@@ -120,7 +120,7 @@ ROOT Hips
 
  
 var myMotion = new Array(5);
-for (var i = 0; i < 27-1; i++) {
+for (var i = 0; i < 57-1; i++) {
   myMotion[i] = new Array(27-1);
 }
 
@@ -149,7 +149,7 @@ myMotion[0][4] = 0.033333
   }	
 	
   for (myLoop2 = 2; myLoop2 <= 5; myLoop2++){	
-     for (myLoop3 = 1; myLoop3 <= 57; myLoop3++){						    
+     for (myLoop3 = 0; myLoop3 <= 57-1; myLoop3++){						    
 	myMotion[myLoop2][myLoop3] = ((Math.floor(Math.random()*1000)/100)-5).toFixed(2)				    
      }	
   }	  
@@ -179,8 +179,8 @@ myMotion[0][2] = document.getElementById('myFrameNumber').value
  myTemp += myMotion[0][3]+' '+ myMotion[0][4]+'\n'   	         //Frame Time: 0.033333
 							 
 
- for (myNums=1;  myNums <= document.getElementById('myFrameNumber').value; myNums++){
-    for (myNums2=1;  myNums2 <= 57; myNums2++){
+ for (myNums=1;  myNums <= document.getElementById('myFrameNumber').value; myNums++){   // ignore location 0
+    for (myNums2=0;  myNums2 <= 57-1; myNums2++){
 	myTemp += myMotion[myNums][myNums2] + '\t'						 
      }
   myTemp +=	'\n'						 
