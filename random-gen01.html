@@ -130,7 +130,7 @@ ROOT Hips
 <input type=number id="myFrameNumber" value=2>
 
 <input type=button value="Set" onclick="{
-   document.myMotion = new Array(5);
+   document.myMotion = new Array(document.getElementById('myFrameNumber').value);
       for (var i = 0; i < 57-1; i++) {
      document.myMotion[i] = new Array(57-1);
    }
@@ -159,7 +159,7 @@ document.myMotion[0][4] = 0.033333
 	document.myMotion[1][myLoop] = 0.00				    
   }	
 	
-  for (myLoop2 = 2; myLoop2 <= 5; myLoop2++){	
+  for (myLoop2 = 2; myLoop2 <= document.getElementById('myFrameNumber').value; myLoop2++){	
      for (myLoop3 = 0; myLoop3 <= 57-1; myLoop3++){						    
 	document.myMotion[myLoop2][myLoop3] = ((Math.floor(Math.random()*1000)/100)-5).toFixed(2)				    
      }	
