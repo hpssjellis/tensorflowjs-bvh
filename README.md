@@ -1,6 +1,50 @@
 # tensorflowjs-bvh
-This is a guess that posenet and bvh were meant to be together
+This is a guess that both Posenet and BVH format were meant to be together
 
+
+
+
+Main converter  
+https://hpssjellis.github.io/tensorflowjs-bvh/random-gen01.html
+
+
+still testing a BVH file viewer  Presently not working
+
+https://hpssjellis.github.io/tensorflowjs-bvh/bvh-view.html
+
+
+
+
+Cool viewer at 
+
+http://herzig.github.io/BVHImporter/
+
+
+another generator
+
+http://www.akjava.com/demo/bvhplayer/
+
+I like this
+
+http://lo-th.github.io/olympe/BVH_player.html
+
+
+
+.
+
+
+
+
+.
+
+
+
+
+.
+
+
+
+Supporting links
 
 
 example webcam machine learning posenet  
@@ -31,18 +75,6 @@ or
 http://www.makehuman.org/download.php
 
 
-Cool viewer at 
-
-http://herzig.github.io/BVHImporter/
-
-
-another generator
-
-http://www.akjava.com/demo/bvhplayer/
-
-I like this
-
-http://lo-th.github.io/olympe/BVH_player.html
 
 
 
@@ -50,9 +82,7 @@ http://lo-th.github.io/olympe/BVH_player.html
 
 
 
-This site link is
 
-https://hpssjellis.github.io/tensorflowjs-bvh/
 
 
 
