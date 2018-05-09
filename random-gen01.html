@@ -150,7 +150,7 @@ myMotion[0][4] = 0.033333
 	
   for (myLoop2 = 2; myLoop2 <= 5; myLoop2++){	
      for (myLoop3 = 1; myLoop3 <= 57; myLoop3++){						    
-	myMotion[myLoop2][myLoop3] = ((Math.floor(Math.random()*1000)/100)-5)				    
+	myMotion[myLoop2][myLoop3] = ((Math.floor(Math.random()*1000)/100)-5).toFixed(2)				    
      }	
   }	  
 	
@@ -207,7 +207,7 @@ document.getElementById('myBVH').value = JSON.parse(document.getElementById('myB
 <input type=button value="Generate-Random" onclick="{
   myTemp = ' '
   for (myLoop = 1; myLoop <= 57; myLoop++){						    
-	myTemp += ((Math.floor(Math.random()*1000)/100)-5) + '\t'					    
+	myTemp += ((Math.floor(Math.random()*1000)/100)-5).toFixed(2) + '\t'					    
   }						    
      document.getElementById('myNewLine').value	 = myTemp + '\n'					       
 }">
