@@ -130,17 +130,17 @@ ROOT Hips
 <input type=number id="myFrameNumber" value=2>
 
 <input type=button value="Set" onclick="{
-var myMotion = new Array(5);
+var document.myMotion = new Array(5);
 for (var i = 0; i < 57-1; i++) {
-  myMotion[i] = new Array(27-1);
+  document.myMotion[i] = new Array(27-1);
 }
 
 
-myMotion[0][0] = 'MOTION' 
-myMotion[0][1] = 'Frames:' 
-myMotion[0][2] = 2
-myMotion[0][3] = 'Frame Time:'
-myMotion[0][4] = 0.033333
+document.myMotion[0][0] = 'MOTION' 
+document.myMotion[0][1] = 'Frames:' 
+document.myMotion[0][2] = 2
+document.myMotion[0][3] = 'Frame Time:'
+document.myMotion[0][4] = 0.033333
 
 	
 	
@@ -156,12 +156,12 @@ myMotion[0][4] = 0.033333
 	
 	
   for (myLoop = 0; myLoop <= 57-1; myLoop++){						    
-	myMotion[1][myLoop] = 0.00				    
+	document.myMotion[1][myLoop] = 0.00				    
   }	
 	
   for (myLoop2 = 2; myLoop2 <= 5; myLoop2++){	
      for (myLoop3 = 0; myLoop3 <= 57-1; myLoop3++){						    
-	myMotion[myLoop2][myLoop3] = ((Math.floor(Math.random()*1000)/100)-5).toFixed(2)				    
+	document.myMotion[myLoop2][myLoop3] = ((Math.floor(Math.random()*1000)/100)-5).toFixed(2)				    
      }	
   }	  
 	
@@ -177,17 +177,17 @@ myMotion[0][4] = 0.033333
 
 
 <input type=button value="Change Number Frames" onclick="{
-myMotion[0][2] = document.getElementById('myFrameNumber').value							 
+document.myMotion[0][2] = document.getElementById('myFrameNumber').value							 
 							 
 							 
- myTemp = myMotion[0][0]+ '\n'                                   //MOTION
- myTemp += myMotion[0][1]+'    '+ myMotion[0][2]+'\n'            //Frames:    2
- myTemp += myMotion[0][3]+' '+ myMotion[0][4]+'\n'   	         //Frame Time: 0.033333
+ myTemp = document.myMotion[0][0]+ '\n'                                   //MOTION
+ myTemp += document.myMotion[0][1]+'    '+ document.myMotion[0][2]+'\n'            //Frames:    2
+ myTemp += document.myMotion[0][3]+' '+ document.myMotion[0][4]+'\n'   	         //Frame Time: 0.033333
 							 
 
  for (myNums=1;  myNums <= document.getElementById('myFrameNumber').value; myNums++){   // ignore location 0
     for (myNums2=0;  myNums2 <= 57-1; myNums2++){
-	myTemp += myMotion[myNums][myNums2] + '\t'						 
+	myTemp += document.myMotion[myNums][myNums2] + '\t'						 
      }
   myTemp +=	'\n'						 
  }						 
@@ -238,7 +238,7 @@ document.getElementById('myBVH').value = myString
 }">
 
 <input type=button value="Show motion array" onclick="{
-alert(myMotion)						       
+alert(document.myMotion)						       
 					       
 }"><br>
 
