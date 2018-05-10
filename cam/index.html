@@ -43,13 +43,14 @@ Check for timed Storage (Will store a lot of data!)<br>
     //alert('checked')
     
    document.getElementById('myCountDown').value  = document.getElementById('myDuration').value
+   document.getElementById('myBackup01').value  = ''  // delete the output textarea                                              
    document.myInterval = setInterval(( function(){
         document.getElementById('myCountDown').value = parseInt(document.getElementById('myCountDown').value) - 1
         if (parseInt(document.getElementById('myCountDown').value) <= 0){  
             document.getElementById('myTimed').checked = false
            // document.getElementById('myBackup01').value   =  document.getElementById('myDiv01').value     // store the data                            
             clearInterval(document.myInterval)
-            stopCurrentVideoStream()                 // activate the function to stop the video so we don't lose our data                                    
+          //  stopCurrentVideoStream()                 // activate the function to stop the video so we don't lose our data                                    
         }
     
     }  ), 1000)   // count down once a second
@@ -63,9 +64,9 @@ Count Down Timer: <input type=number id="myCountDown" value=0> <br>
     
     
     
-<textarea rows=100 cols=10 wrap=false id="myDiv01"></textarea>  <br>
+<textarea rows=10 cols=100 wrap=false id="myDiv01"></textarea>  <br>
 Following is stored data that you can cut and paste elsewhere<br>
-<textarea rows=100 cols=10 wrap=false id="myBackup01"></textarea>     
+<textarea rows=200 cols=100 wrap=false id="myBackup01"></textarea>     
     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
     <div class="footer">
         <div class="footer-text">
