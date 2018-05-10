@@ -4,6 +4,12 @@ This is a guess that both Posenet and BVH format were meant to be together
 
 
 
+The camera is at  
+
+https://hpssjellis.github.io/tensorflowjs-bvh/camera.html
+
+
+
 Main converter  
 https://hpssjellis.github.io/tensorflowjs-bvh/random-gen01.html
 
