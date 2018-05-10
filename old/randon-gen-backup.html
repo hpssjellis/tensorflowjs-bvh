@@ -1,8 +1,24 @@
 
 
+Changing Posenet data to BVH files.<br>
+DRAFT not yet working
+<ul>
+<li>: generate random bvh file data.<br>
+<li>: Get posenet data from <a href="https://hpssjellis.github.io/tensorflowjs-bvh/cam/index.html"> Camera</a><br>
+<li>: Copy data to 2nd textbox
+<li>: Convert data to bvh in third textbox
+<li>: Copy data to a file
+<li>: Load the file and test it on <a href="http://lo-th.github.io/olympe/BVH_player.html">http://lo-th.github.io/olympe/BVH_player.html</a>
+<li>: Make a blender object and add the bvh data to the object	
+	
+</ul>
 
 
 <script>
+	
+var myPoseObject = {}	
+	
+	
  const myOriginal =  `{
 HIERARCHY
 ROOT Hips
@@ -137,7 +153,7 @@ ROOT Hips
 }">
 
 
-<input id="myFirstButton" type=button value="Set" onclick="{
+<input id="myFirstButton" type=hidden value="Set" onclick="{
    document.myMotion = new Array(document.getElementById('myFrameNumber').value);
       for (var i = 0; i < document.getElementById('myFrameNumber').value+1; i++) {
      document.myMotion[i] = new Array(57-1);
@@ -178,13 +194,13 @@ document.myMotion[0][4] = 0.033333
 
 
 
-<input id="mySecondButton" type=button value="Original" onclick="{
+<input id="mySecondButton" type=hidden value="Original" onclick="{
 
   document.getElementById('myBVH').value = myOriginal						       
 }">
 
 
-<input id="myThirdButton"   type=button value="Change Number Frames" onclick="{
+<input id="myThirdButton"   type=hidden value="Change Number Frames" onclick="{
 document.myMotion[0][2] = document.getElementById('myFrameNumber').value							 
 							 
 							 
@@ -224,4 +240,86 @@ alert(document.myMotion)
 
 
 
-<textarea id="myBVH" rows=20 cols=100 ></textarea><br>
+<textarea id="myBVH" rows=20 cols=500 ></textarea><br><br>
+
+Posenet data goes here<br>
+
+<textarea id="myFromPosenet" rows=20 cols=500 ></textarea><br><br><br>
+
+<input id="myCheck" type=text value="">
+
+<input type=button value="Parse Posenet" onclick="{
+   myPoseObject =JSON.parse(document.getElementById('myFromPosenet').value)					  
+						  
+   alert(myPoseObject)						  
+}"><br><br>
+
+Calculating the angle from data points<br>
+
+x1<input id="myx1" type=text value=0>
+y1<input id="myy1" type=text value=0>
+d1=<input id="myd1" type=text value=0> 
+Alpha1=<input id="myAlpha1" type=text value=0> <br>
+
+
+x2<input id="myx2" type=text value=3>
+y2<input id="myy2" type=text value=4>
+d2=<input id="myd2" type=text value=0>
+Alpha2=<input id="myAlpha2" type=text value=0><br>
+
+
+x3<input id="myx3" type=text value=6>
+y3<input id="myy3" type=text value=8>
+d3=<input id="myd3" type=text value=0>
+Alpha3=<input id="myAlpha3" type=text value=0><br>
+
+
+
+
+
+<input type=button value="alpha" onclick="{
+document.getElementById('myd1').value = 0   // always
+x21 = ( parseFloat(document.getElementById('myx2').value)-parseFloat(document.getElementById('myx1').value) )
+y21 = ( parseFloat(document.getElementById('myy2').value)-parseFloat(document.getElementById('myy1').value) )	
+					  
+					  
+x32 = ( parseFloat(document.getElementById('myx3').value)-parseFloat(document.getElementById('myx2').value) )
+y32 = ( parseFloat(document.getElementById('myy3').value)-parseFloat(document.getElementById('myy2').value) )	
+					  
+
+x13 = ( parseFloat(document.getElementById('myx1').value)-parseFloat(document.getElementById('myx3').value) )
+y13 = ( parseFloat(document.getElementById('myy1').value)-parseFloat(document.getElementById('myy3').value) )						  
+					  
+myd21Cal = Math.sqrt( Math.pow(x21, 2 ) + Math.pow(y21, 2)   )
+myd32Cal = Math.sqrt( Math.pow(x32, 2 ) + Math.pow(y32, 2)   )	
+myd13Cal = Math.sqrt( Math.pow(x13, 2 ) + Math.pow(y13, 2)   )	
+					  
+					  
+					  
+					  
+					  
+					  
+document.getElementById('myd2').value = myd21Cal
+document.getElementById('myd3').value = myd32Cal
+document.getElementById('myd1').value = myd13Cal
+					  
+  myAnswer = (Math.acos( (  (myd13Cal*myd13Cal)  - (myd21Cal*myd21Cal) -(myd32Cal*myd32Cal) ) / ( -2* myd21Cal * myd32Cal)             )*180/Math.PI)
+  alert(myAnswer)			     
+}">
+<input type=button value="--------" onclick="{
+			     
+}">
+<input type=button value="--------" onclick="{
+			     
+}">
+<input type=button value="--------" onclick="{
+			     
+}"><br>
+
+
+
+
+<textarea id="myToBVH" rows=40 cols=500 ></textarea><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
