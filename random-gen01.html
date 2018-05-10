@@ -245,12 +245,13 @@ Posenet data goes here<br>
 
 <textarea id="myFromPosenet" rows=20 cols=500 ></textarea><br><br><br>
 
-<input id="myCheck" type=text value=0>
+<input id="myCheck" type=text value="'keypoints'">
+
 <input type=button value="Parse Posenet" onclick="{
    myPoseObject =JSON.parse(document.getElementById('myFromPosenet').value)
-   myTemp = 'myPoseObject[' + document.getElementById('myCheck').value+ ']'						  
+   myTemp = 'myPoseObject' + document.getElementById('myCheck').value						  
 						  
- alert(eval('keypoints'+myTemp))						  
+ alert(myPoseObject(eval(myTemp)))						  
 }"><br>
 
 x1<input id="myx1" type=text value=0>
