@@ -259,8 +259,8 @@ Calculating the angle from data points<br>
 x1<input id="myx1" type=text value=0>
   y1<input id="myy1" type=text value=0>
   d=<input id="myd1" type=text value=0><br>
-x2<input id="myx2" type=text value=0>
-  y2<input id="myy2" type=text value=0>
+x2<input id="myx2" type=text value=3>
+  y2<input id="myy2" type=text value=4>
  d=<input id="myd2" type=text value=0><br>
 x3<input id="myx3" type=text value=0>
 y3<input id="myy3" type=text value=0>
@@ -272,7 +272,11 @@ y3<input id="myy3" type=text value=0>
 
 <input type=button value="alpha" onclick="{
 document.getElementById('myd1').value = 0   // always
-document.getElementById('myd2').value = Math.sqrt( Math.pow((parseFloat(document.getElementById('myx2').value)-parseFloat(document.getElementById('myx1').value)), 2 ) + Math.sqrt(4)   )
+x21 = ( parseFloat(document.getElementById('myx2').value)-parseFloat(document.getElementById('myx1').value) )
+y21 = ( parseFloat(document.getElementById('myy2').value)-parseFloat(document.getElementById('myy1').value) )					  
+					  
+					  
+document.getElementById('myd2').value = Math.sqrt( Math.pow(x21, 2 ) + Math.pow(y21, 2)   )
 					  
   myAnswer = document.getElementById('myx1').value
  // alert(myAnswer)			     
