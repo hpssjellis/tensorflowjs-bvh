@@ -269,8 +269,8 @@ Alpha2=<input id="myAlpha2" type=text value=0><br>
 
 x3<input id="myx3" type=text value=6>
 y3<input id="myy3" type=text value=8>
-d3=<input id="myAlpha3" type=text value=0>
-Alpha3=<input id="myd3" type=text value=0><br>
+d3=<input id="myd3" type=text value=0>
+Alpha3=<input id="myAlpha3" type=text value=0><br>
 
 
 
@@ -285,9 +285,22 @@ y21 = ( parseFloat(document.getElementById('myy2').value)-parseFloat(document.ge
 x32 = ( parseFloat(document.getElementById('myx3').value)-parseFloat(document.getElementById('myx2').value) )
 y32 = ( parseFloat(document.getElementById('myy3').value)-parseFloat(document.getElementById('myy2').value) )	
 					  
+
+x13 = ( parseFloat(document.getElementById('myx1').value)-parseFloat(document.getElementById('myx3').value) )
+y13 = ( parseFloat(document.getElementById('myy1').value)-parseFloat(document.getElementById('myy3').value) )						  
 					  
-document.getElementById('myd2').value = Math.sqrt( Math.pow(x21, 2 ) + Math.pow(y21, 2)   )
-document.getElementById('myd3').value = Math.sqrt( Math.pow(x32, 2 ) + Math.pow(y32, 2)   )
+myd21Cal = Math.sqrt( Math.pow(x21, 2 ) + Math.pow(y21, 2)   )
+myd32Cal = Math.sqrt( Math.pow(x32, 2 ) + Math.pow(y32, 2)   )	
+myd13Cal = Math.sqrt( Math.pow(x13, 2 ) + Math.pow(y13, 2)   )	
+					  
+					  
+					  
+					  
+					  
+					  
+document.getElementById('myd2').value = myd21Cal
+document.getElementById('myd3').value = myd32Cal
+document.getElementById('myd1').value = myd13Cal
 					  
  // myAnswer = document.getElementById('myx1').value
  // alert(myAnswer)			     
