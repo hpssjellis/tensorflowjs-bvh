@@ -137,7 +137,7 @@ ROOT Hips
 }">
 
 
-<input id="myFirstButton" type=button value="Set" onclick="{
+<input id="myFirstButton" type=hidden value="Set" onclick="{
    document.myMotion = new Array(document.getElementById('myFrameNumber').value);
       for (var i = 0; i < document.getElementById('myFrameNumber').value+1; i++) {
      document.myMotion[i] = new Array(57-1);
@@ -178,13 +178,13 @@ document.myMotion[0][4] = 0.033333
 
 
 
-<input id="mySecondButton" type=button value="Original" onclick="{
+<input id="mySecondButton" type=hidden value="Original" onclick="{
 
   document.getElementById('myBVH').value = myOriginal						       
 }">
 
 
-<input id="myThirdButton"   type=button value="Change Number Frames" onclick="{
+<input id="myThirdButton"   type=hidden value="Change Number Frames" onclick="{
 document.myMotion[0][2] = document.getElementById('myFrameNumber').value							 
 							 
 							 
