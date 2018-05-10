@@ -3,7 +3,7 @@ This is a guess that both Posenet and BVH format were meant to be together
 
 
 The cam viewer  
-https://hpssjellis.github.io/tensorflowjs-bvh/cam/camera.html
+https://hpssjellis.github.io/tensorflowjs-bvh/cam/index.html
 
 
 
