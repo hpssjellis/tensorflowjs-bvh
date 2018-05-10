@@ -250,7 +250,20 @@ Posenet data goes here<br>
 <input type=button value="Parse Posenet" onclick="{
    myPoseObject =JSON.parse(document.getElementById('myFromPosenet').value)					  
 						  
-   alert('Score = '+myPoseObject.score+', '+myPoseObject.keypoints)						  
+ alert('Score = '+myPoseObject.score+', '+myPoseObject.keypoints)
+						  
+for(n1 in myPoseObject){
+    for(n1_1 in myPoseObject[n1]){
+       for(n1_2 in myPoseObject[n1][n1_1]){
+            for(n1_3 in myPoseObject[n1][n1_1][n1_2]){
+                   obj[myPoseObject[n1][n1_1][n1_2].name]=myPoseObject[n1][n1_1][n1_2].value;
+            }
+        }
+    }
+}						  
+alert(obj)						  
+						  
+						  
 }"><br><br>
 
 Calculating the angle from data points<br>
