@@ -272,7 +272,7 @@ y3<input id="myy3" type=text value=0>
 
 <input type=button value="alpha" onclick="{
 document.getElementById('myd1').value = 0   // always
-document.getElementById('myd2').value = Math.sqrt( Math.sqr(3) + Math.sqrt(4)   )
+document.getElementById('myd2').value = Math.sqrt( Math.pow((parseFloat(document.getElementById('myx2').value)-parseFloat(document.getElementById('myx1').value)), 2 ) + Math.sqrt(4)   )
 					  
   myAnswer = document.getElementById('myx1').value
  // alert(myAnswer)			     
