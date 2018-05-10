@@ -245,7 +245,7 @@ Posenet data goes here<br>
 
 <textarea id="myFromPosenet" rows=20 cols=500 ></textarea><br><br><br>
 
-<input id="myCheck" type=text value="'myPoseObject.keypoints'">
+<input id="myCheck" type=text value="myPoseObject.keypoints">
 
 <input type=button value="Parse Posenet" onclick="{
    myPoseObject =JSON.parse(document.getElementById('myFromPosenet').value)					  
@@ -272,12 +272,17 @@ y3<input id="myy3" type=text value=0>
 <input type=button value="alpha" onclick="{
 document.getElementById('myd1').value = 0   // always
 x21 = ( parseFloat(document.getElementById('myx2').value)-parseFloat(document.getElementById('myx1').value) )
-y21 = ( parseFloat(document.getElementById('myy2').value)-parseFloat(document.getElementById('myy1').value) )					  
+y21 = ( parseFloat(document.getElementById('myy2').value)-parseFloat(document.getElementById('myy1').value) )	
+					  
+					  
+x32 = ( parseFloat(document.getElementById('myx3').value)-parseFloat(document.getElementById('myx2').value) )
+y32 = ( parseFloat(document.getElementById('myy3').value)-parseFloat(document.getElementById('myy2').value) )	
 					  
 					  
 document.getElementById('myd2').value = Math.sqrt( Math.pow(x21, 2 ) + Math.pow(y21, 2)   )
+document.getElementById('myd3').value = Math.sqrt( Math.pow(x32, 2 ) + Math.pow(y32, 2)   )
 					  
-  myAnswer = document.getElementById('myx1').value
+ // myAnswer = document.getElementById('myx1').value
  // alert(myAnswer)			     
 }">
 <input type=button value="--------" onclick="{
