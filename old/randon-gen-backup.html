@@ -1,6 +1,7 @@
 
 
 
+
 <script>
  const myOriginal =  `{
 HIERARCHY
@@ -128,9 +129,17 @@ ROOT Hips
 
 <input type=number id="myFrameNumber" value=2>
 
-<input type=button value="Set" onclick="{
+
+<input type=button value="Randomize" onclick="{
+   document.getElementById('myFirstButton').click()
+   document.getElementById('mySecondButton').click()
+   document.getElementById('myThirdButton').click()
+}">
+
+
+<input id="myFirstButton" type=button value="Set" onclick="{
    document.myMotion = new Array(document.getElementById('myFrameNumber').value);
-      for (var i = 0; i < 57-1; i++) {
+      for (var i = 0; i < document.getElementById('myFrameNumber').value+1; i++) {
      document.myMotion[i] = new Array(57-1);
    }
 
@@ -169,13 +178,13 @@ document.myMotion[0][4] = 0.033333
 
 
 
-<input type=button value="Original" onclick="{
+<input id="mySecondButton" type=button value="Original" onclick="{
 
   document.getElementById('myBVH').value = myOriginal						       
 }">
 
 
-<input type=button value="Change Number Frames" onclick="{
+<input id="myThirdButton"   type=button value="Change Number Frames" onclick="{
 document.myMotion[0][2] = document.getElementById('myFrameNumber').value							 
 							 
 							 
@@ -204,37 +213,7 @@ document.getElementById('myBVH').value = myString
 }">
 
 
-<input type=button value="TO JSON" onclick="{
-									    
-document.getElementById('myBVH').value = JSON.stringify(myOriginal, null, 3)					          
-}">
 
-<input type=button value="FROM JSON" onclick="{
-
-document.getElementById('myBVH').value = JSON.parse(document.getElementById('myBVH').value)										    
-					          
-}">
-<input type=button value="Generate-Random" onclick="{
-  myTemp = ' '
-  for (myLoop = 1; myLoop <= 57; myLoop++){						    
-	myTemp += ((Math.floor(Math.random()*1000)/100)-5).toFixed(2) + '\t'					    
-  }						    
-     document.getElementById('myNewLine').value	 = myTemp + '\n'					       
-}">
-
-
-
-<input type=button value="Add a line" onclick="{
-myString = document.getElementById('myBVH').value
-					       
-
-myString = myString.substring(0, myString.length - 1)
-					       
-myString += document.getElementById('myNewLine').value			       
-myString += '}'
-document.getElementById('myBVH').value = myString					       
-					       
-}">
 
 <input type=button value="Show motion array" onclick="{
 alert(document.myMotion)						       
@@ -246,5 +225,3 @@ alert(document.myMotion)
 
 
 <textarea id="myBVH" rows=20 cols=100 ></textarea><br>
-<textarea id="myNewLine" rows=3 cols=100 >7.81	 35.10	 86.47	-3.78	 12.94	-166.97	 12.64	 42.57	-22.34	 7.67	 43.61	 0.00	-4.23	-41.41	 4.89	 19.10	 0.00	 4.16	 93.12	-9.69	-9.43	 132.67	-81.86	 136.80	 0.70	 0.37	 0.00	-8.62	 0.00	-21.82	-87.31	-27.57	-100.09	 56.17	-61.56	 58.72	-1.63	 0.95	 0.03	 13.16	 15.44	-3.56	 7.97	 59.29	 4.97	 0.00	 1.64	 0.00	-17.18	-10.02	-3.08	 13.56	 53.38	-18.07	 0.00	-25.93	 0.00
-</textarea>
