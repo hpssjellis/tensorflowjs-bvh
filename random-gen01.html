@@ -248,7 +248,12 @@ Posenet data goes here<br>
 <input id="myCheck" type=text value="">
 
 <input type=button value="Parse Posenet" onclick="{
-   myPoseObject =JSON.parse(document.getElementById('myFromPosenet').value)					  
+   
+myPoseObject =JSON.parse(document.getElementById('myFromPosenet').value)					  
+
+						  
+alert(myPoseObject[0])						  
+						  
 						  
  alert('Score = '+myPoseObject.score+'\n'+myPoseObject.keypoints)
 						  
