@@ -11,9 +11,7 @@ Main converter
 https://hpssjellis.github.io/tensorflowjs-bvh/random-gen01.html
 
 
-still testing a BVH file viewer  Presently not working
 
-https://hpssjellis.github.io/tensorflowjs-bvh/bvh-view.html
 
 
 
