@@ -257,20 +257,20 @@ Calculating the angle from data points<br>
 
 x1<input id="myx1" type=text value=0>
 y1<input id="myy1" type=text value=0>
-d1=<input id="myd1" type=text value=0> 
-Alpha1=<input id="myAlpha1" type=text value=0> <br>
+d1-2=<input id="myd1" type=text value=0> 
+Alpha1-2=<input id="myAlpha1" type=text value=0> <br>
 
 
 x2<input id="myx2" type=text value=100>
 y2<input id="myy2" type=text value=0>
-d2=<input id="myd2" type=text value=0>
-Alpha2=<input id="myAlpha2" type=text value=0><br>
+d2-3=<input id="myd2" type=text value=0>
+Alpha2-3=<input id="myAlpha2" type=text value=0><br>
 
 
 x3<input id="myx3" type=text value=100>
 y3<input id="myy3" type=text value=100>
-d3=<input id="myd3" type=text value=0>
-Alpha3=<input id="myAlpha3" type=text value=0><br>
+d3-1=<input id="myd3" type=text value=0>
+Alpha3-1=<input id="myAlpha3" type=text value=0><br>
 
 
 
@@ -298,11 +298,11 @@ myd13Cal = Math.sqrt( Math.pow(x13, 2 ) + Math.pow(y13, 2)   )
 					  
 					  
 					  
-document.getElementById('myd2').value = myd21Cal
-document.getElementById('myd3').value = myd32Cal
-document.getElementById('myd1').value = myd13Cal
+document.getElementById('myd1').value = myd21Cal
+document.getElementById('myd2').value = myd32Cal
+document.getElementById('myd3').value = myd13Cal
 					  
-document.getElementById('myAlpha2').value = (Math.acos( (  (myd13Cal*myd13Cal)  - (myd21Cal*myd21Cal) -(myd32Cal*myd32Cal) ) / ( -2* myd21Cal * myd32Cal)             )*180/Math.PI)
+document.getElementById('myAlpha1').value = (Math.acos( (  (myd13Cal*myd13Cal)  - (myd21Cal*myd21Cal) -(myd32Cal*myd32Cal) ) / ( -2* myd21Cal * myd32Cal)             )*180/Math.PI)
 			     
 }">
 <input type=button value="--------" onclick="{
