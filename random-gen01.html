@@ -250,7 +250,7 @@ Posenet data goes here<br>
 <input type=button value="Parse Posenet" onclick="{
    myPoseObject =JSON.parse(document.getElementById('myFromPosenet').value)					  
 						  
-   alert(myPoseObject.keypoints)						  
+   alert(myPoseObject)						  
 }"><br><br>
 
 Calculating the angle from data points<br>
@@ -302,7 +302,7 @@ document.getElementById('myd2').value = myd21Cal
 document.getElementById('myd3').value = myd32Cal
 document.getElementById('myd1').value = myd13Cal
 					  
-  myAnswer = (Math.acos(0.5)*180/Math.PI)
+  myAnswer = (Math.acos( (  (myd13Cal*myd13Cal)  - (myd21Cal*myd21Cal) -(myd32Cal*myd32Cal) ) / ( -2* myd21Cal * myd32Cal)      )       )*180/Math.PI)
   alert(myAnswer)			     
 }">
 <input type=button value="--------" onclick="{
