@@ -14,6 +14,10 @@ DRAFT not yet working
 
 
 <script>
+	
+var myPoseObject = {}	
+	
+	
  const myOriginal =  `{
 HIERARCHY
 ROOT Hips
@@ -243,7 +247,8 @@ Posenet data goes here<br>
 
 
 <input type=button value="Parse Posenet" onclick="{
-   alert(JSON.parse(document.getElementById('myFromPosenet').value))				     
+   myPoseObject =JSON.parse(document.getElementById('myFromPosenet').value)
+ alert(myPoseObject[0])						  
 }">
 
 <input type=button value="--------" onclick="{
