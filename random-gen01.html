@@ -328,7 +328,16 @@ document.getElementById('myd2').value = myd32Cal
 document.getElementById('myd3').value = myd13Cal
 					  
 document.getElementById('myAlpha1').value = (Math.acos( (  (myd13Cal*myd13Cal)  - (myd21Cal*myd21Cal) -(myd32Cal*myd32Cal) ) / ( -2* myd21Cal * myd32Cal)             )*180/Math.PI)
-			     
+					  
+document.getElementById('myAlpha2').value = (Math.acos( (  (myd21Cal*myd21Cal)  - (myd32Cal*myd32Cal) -(myd13Cal*myd13Cal) ) / ( -2* myd32Cal * myd13Cal)             )*180/Math.PI)
+
+document.getElementById('myAlpha3').value = (Math.acos( (  (myd32Cal*myd32Cal)  - (myd13Cal*myd13Cal) -(myd21Cal*myd21Cal) ) / ( -2* myd13Cal * myd21Cal)             )*180/Math.PI)
+					  
+					  
+					  
+					  
+					  
+					  
 }">
 <input type=button value="--------" onclick="{
 			     
