@@ -201,7 +201,7 @@ function detectPoseInRealTime(video, net) {
       myTemp =  await JSON.stringify(pose, null, 3)
       document.getElementById('myDiv01').value =   myTemp  
       if (document.getElementById('myTimed').checked == true){         
-         document.getElementById('myBackup01').value += myTemp      
+         document.getElementById('myBackup01').value += myTemp + ','      
       } 
         
         
@@ -222,7 +222,7 @@ function detectPoseInRealTime(video, net) {
       myTemp =  await JSON.stringify(poses, null, 3)
       document.getElementById('myDiv01').value =   myTemp  
       if (document.getElementById('myTimed').checked == true){         
-         document.getElementById('myBackup01').value += myTemp      
+         document.getElementById('myBackup01').value += myTemp + ','         
       }   
         
         
