@@ -75,7 +75,7 @@ function loadVideo(cameraId) {
 }
 
 const guiState = {
-  algorithm: 'single-pose',
+  algorithm: 'multi-pose',
   input: {
     mobileNetArchitecture: '1.01',
     outputStride: 16,
@@ -103,7 +103,7 @@ function setupGui(cameras, net) {
   guiState.net = net;
 
   if (cameras.length > 0) {
-    guiState.camera = cameras[0].deviceId;
+    guiState.camera = cameras[1].deviceId;
   }
 
   const cameraOptions = cameras.reduce((result, {label, deviceId}) => {
