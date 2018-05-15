@@ -14,7 +14,8 @@
 
 -->
 
-
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script> 
+    <script src="https://unpkg.com/@tensorflow-models/posenet"></script> 
 
 <!--   *******************************Stop What source js file to use****************************************************   -->
 
@@ -22,15 +23,16 @@
 <div id="myDiv2424">... </div>
 <script >
 	
- 
-	
-	
-  var Pts = Pts || {}
+ async function bindPage() {
+  const net = await posenet.load();
+ }	
+bindPage()	
+ // var Pts = Pts || {}
 
-  var mySpace =  new Pts.CanvasSpace('#myDiv2424').setup({ retina: true, resize: true });
+ // var mySpace =  new Pts.CanvasSpace('#myDiv2424').setup({ retina: true, resize: true });
 
 	
-  var myPtForm = new Pts.CanvasForm(mySpace)	
+ // var myPtForm = new Pts.CanvasForm(mySpace)	
 
 	
 // not working but interesting
@@ -228,9 +230,8 @@ Use the first 15 buttons to decide on what words to enter for the last 5 buttons
 
 <input type=button value="1 window" onclick="{myObjectData(window)}">
 <input type=button value="2 document" onclick="{myObjectData(document)}">
-<input type=button value="3 mySpace" onclick="{myObjectData(mySpace)}">
+<input type=button value="3 net" onclick="{myObjectData(net)}">
 
-<input type=button value="5 myPtForm" onclick="{myObjectData(myPtForm)}">
 <input type=button value="23 " onclick="{myObjectData()}">
 <input type=button value="23 " onclick="{myObjectData()}">
 <input type=button value="23 " onclick="{myObjectData()}">
