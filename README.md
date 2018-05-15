@@ -16,6 +16,8 @@ The web index for this page is at
 https://hpssjellis.github.io/tensorflowjs-bvh/index.html
 
 
+checker  
+https://hpssjellis.github.io/tensorflowjs-bvh/posenet-checker.html
 
 
 The cam viewer  
