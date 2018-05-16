@@ -103,7 +103,7 @@ function setupGui(cameras, net) {
   guiState.net = net;
 
   if (cameras.length > 0) {
-    guiState.camera = cameras[1].deviceId;
+    guiState.camera = cameras[0].deviceId;
   }
 
   const cameraOptions = cameras.reduce((result, {label, deviceId}) => {
