@@ -10,8 +10,6 @@ Posenet Camera for BVH conversion testing
 <a href="https://github.com/hpssjellis/tensorflowjs-bvh"> My Github here </a><br>
 
 
-BVH formater <a href="https://hpssjellis.github.io/tensorflowjs-bvh/random-gen01.html">BVH formater here</a><br>
-
 
 BVH player I like <a href="http://lo-th.github.io/olympe/BVH_player.html"> BVH player here</a><br><br>
 
@@ -21,9 +19,8 @@ Mixamo OpenSource BVH files at <a href="https://www.mixamo.com/#/">https://www.m
 <br><br>
 <img src="mixPosenet.png" width=500><br><br><br><br>
 
-The problem is that the Posenet data is positional x and y points for each location estimated but
-BVH data is mainly angular based on the x, y, z angle of change from the main location of the Hips.
-The main file is then folowed by 57 defined variable values for each angle of rotation, for each frame.<br><br><br><br>
+<h2 align=center color=blue> The problem is that the Posenet data is positional, an x and y value each location to be estimated.</h2> 
+<br><br>
 
 
 Example Single Pose, single snapshot PoseNet data<br>
@@ -170,6 +167,12 @@ Example Single Pose, single snapshot PoseNet data<br>
 </textarea><br><br><br>
 
 
+<h2 align=center color=blue>
+	However, the BVH data is mainly angular, based on the x, y, z angle of change from the main defined location of the hips.
+The main BVH file once defined is then folowed by 57 values per time frame to describe the new angular location of each joint.
+</h2>
+<br><br>
+
 Example single object multiple time frames BVH file<br>
 <textarea rows=20 cols="100%" wrap=false>
 HIERARCHY
@@ -292,6 +295,22 @@ Frame Time: 0.033333
 </textarea><br><br>
 
 
+
+
+
+<h2 align=center color=blue>
+I think the cosine law can be used to convert two sets of x y locations to angles, but that is where I am having some problems.
+	
+	This is as far as I have got at the moment<br>
+	
+	
+
+BVH formater <a href="https://hpssjellis.github.io/tensorflowjs-bvh/random-gen01.html">BVH formater here</a><br>
+	
+	
+</h2>	
+
+</h2>
 
 
 
