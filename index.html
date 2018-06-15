@@ -18,8 +18,13 @@ BVH player I like <a href="http://lo-th.github.io/olympe/BVH_player.html"> BVH p
 
 Mixamo OpenSource BVH files at <a href="https://www.mixamo.com/#/">https://www.mixamo.com/#/</a><br><br>
 
+<br><br>
+<img src="mixPosenet.png" width=500><br><br><br><br>
 
-<img src="mixPosenet.png" width=500><br><br>
+The problem is that the Posenet data is positional x and y points for each location estimated but
+BVH data is mainly angular based on the x, y, z angle of change from the main location of the Hips.
+The main file is then folowed by 57 defined variable values for each angle of rotation, for each frame.<br><br><br><br>
+
 
 Example Single Pose, single snapshot PoseNet data<br>
 <textarea rows=20 cols="100%" wrap=false>
@@ -162,7 +167,7 @@ Example Single Pose, single snapshot PoseNet data<br>
             "y": 453.39834024896265
          }
       }
-</textarea><br><br>
+</textarea><br><br><br>
 
 
 Example single object multiple time frames BVH file<br>
