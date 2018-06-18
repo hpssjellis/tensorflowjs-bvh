@@ -172,6 +172,8 @@ function startRecording(){
   
   myStartTime = new Date().getTime()
   
+  console.log('Total = ' + myTotalVideoDuration + ', sub : '+ mySubVideoDuration + ', start=' + myStartTime)
+  
   const btn = this;
   btn.textContent = 'stop recording to save to disk';
   btn.onclick = stopRecording;
