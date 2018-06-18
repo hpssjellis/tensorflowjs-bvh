@@ -147,13 +147,13 @@ function drawBoundingBox(keypoints, ctx) {
 
 function mySaveVideo(){
 
-const vid = document.querySelector('video');
+document.vid = document.querySelector('video');
 
 
 navigator.mediaDevices.getUserMedia({video: true}) // request cam
 .then(stream => {
-  vid.srcObject = stream; // don't use createObjectURL(MediaStream)
-  return vid.play(); // returns a Promise
+  document.vid.srcObject = stream; // don't use createObjectURL(MediaStream)
+  return document.vid.play(); // returns a Promise
 })
 .then(()=>{ // enable the button
   const btn = document.querySelector('button');
@@ -173,7 +173,7 @@ function startRecording(){
   
   const chunks = []; // here we will save all video data
   
-  const rec = new MediaRecorder(vid.srcObject);
+  const rec = new MediaRecorder(document.vid.srcObject);
   // this event contains our data
   rec.ondataavailable = e => chunks.push(e.data);
   // when done, concatenate our chunks in a single Blob
