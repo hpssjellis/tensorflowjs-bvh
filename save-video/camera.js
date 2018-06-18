@@ -20,7 +20,7 @@
 
 //import {drawKeypoints, drawSkeleton} from './demo_util';
 
-
+myStopRecord = true
 
 const maxVideoSize = 513;
 const canvasSize = 400;
@@ -210,6 +210,17 @@ function detectPoseInRealTime(video, net) {
         guiState.singlePoseDetection.minPoseConfidence);
       minPartConfidence = Number(
         guiState.singlePoseDetection.minPartConfidence);
+        
+   // possible insert saving???     
+      if (myStopRecord){
+             myStopRecord = false
+             startRecording()
+          } else{            
+             myStopRecord = true
+             stopRecording()
+          }
+        
+        
       break;
     case 'multi-pose':
       poses = await guiState.net.estimateMultiplePoses(video, imageScaleFactor, flipHorizontal, outputStride,
@@ -229,6 +240,19 @@ function detectPoseInRealTime(video, net) {
         
       minPoseConfidence = Number(guiState.multiPoseDetection.minPoseConfidence);
       minPartConfidence = Number(guiState.multiPoseDetection.minPartConfidence);
+        
+        
+         // possible insert saving???     
+      if (myStopRecord){
+             myStopRecord = false
+             startRecording()
+          } else{            
+             myStopRecord = true
+             stopRecording()
+          }
+          
+        
+        
       break;
     }
 
