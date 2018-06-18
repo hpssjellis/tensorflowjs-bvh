@@ -150,7 +150,7 @@ function mySaveVideo(){
  document.myStopwatch = setInterval((function() { 
      mySub = 0
      const  myTempTime = new Date().getTime()
-     if (myStartedVideo){
+     if (!myStartedVideo){
          mySub = myTempTime - myStartTime 
          console.log(mySub+',  '+myStartedVideo)
          }
