@@ -156,10 +156,12 @@ function setupGui(cameras, net) {
     case 'single-pose':
       multi.close();
       single.open();
+        myDoOnce = true
       break;
     case 'multi-pose':
       single.close();
       multi.open();
+        myDoOnce = true
       break;
     }
   });
