@@ -180,14 +180,14 @@ function startRecording(){
   rec.onstop = e => download(new Blob(chunks));
   rec.start();
   
-  
+} 
   function stopRecording(){
     rec.stop();
     // switch button's behavior
     btn.textContent = 'start recording';
     btn.onclick = startRecording;
   }
-}
+
 
 
 
