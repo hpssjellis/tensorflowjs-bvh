@@ -191,7 +191,8 @@ function startRecording(){
   document.rec.ondataavailable = e => {
       chunks.push(e.data);
       myEndTime = new Date().getTime()
-      mySubVideoDuration = myEndTime - myStartTime  
+      mySubVideoDuration = myEndTime - myStartTime 
+    console.log(mySubVideoDuration)
    }
   // when done, concatenate our chunks in a single Blob
   document.rec.onstop = e => download(new Blob(chunks));
