@@ -147,7 +147,7 @@ function drawBoundingBox(keypoints, ctx) {
 
 function mySaveVideo(){
 
-const vid = document.querySelector('video');
+const vid = document.querySelector('video2');
 
 
 navigator.mediaDevices.getUserMedia({video: true}) // request cam
