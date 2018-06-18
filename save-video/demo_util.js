@@ -173,16 +173,16 @@ function startRecording(){
   
   const chunks = []; // here we will save all video data
   
-  const rec = new MediaRecorder(document.vid.srcObject);
+  document.rec = new MediaRecorder(document.vid.srcObject);
   // this event contains our data
-  rec.ondataavailable = e => chunks.push(e.data);
+  document.rec.ondataavailable = e => chunks.push(e.data);
   // when done, concatenate our chunks in a single Blob
-  rec.onstop = e => download(new Blob(chunks));
-  rec.start();
+  document.rec.onstop = e => download(new Blob(chunks));
+  document.rec.start();
   
 } 
   function stopRecording(){
-    rec.stop();
+    document.rec.stop();
     // switch button's behavior
     btn.textContent = 'start recording';
     btn.onclick = startRecording;
