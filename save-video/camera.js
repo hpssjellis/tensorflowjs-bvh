@@ -265,6 +265,7 @@ function detectPoseInRealTime(video, net) {
          if (myFirstTime){
              myFirstTime = false
              console.log('Video Stopped')
+           document.getElementById('myButton3').click()
           } 
  
        } else {    
@@ -273,7 +274,8 @@ function detectPoseInRealTime(video, net) {
            myStartedVideo = true
           if (myFirstTime){
              myFirstTime = false
-             console.log('Video Started')
+             console.log('Video Started')            
+             document.getElementById('myButton3').click()
           } 
        }
         
