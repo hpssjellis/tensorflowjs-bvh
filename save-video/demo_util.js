@@ -148,7 +148,7 @@ function drawBoundingBox(keypoints, ctx) {
 function mySaveVideo(){
   
  document.myStopwatch = setInterval((function() {
-    document.getElementById('myRunTime').value = myTotalVideoDuration  /  1000 
+    document.getElementById('myRunTime').value = ( myTotalVideoDuration + mySubVideoDuration)  /  1000 
  }), 1000) 
   
 mySaveActive = true    // deprecated
@@ -174,7 +174,7 @@ function startRecording(){
   // switch button's behavior
   
   myTotalVideoDuration += mySubVideoDuration
-  
+  mySubVideoDuration = 0
   myStartTime = new Date().getTime()
   
   console.log('Total = ' + myTotalVideoDuration + ', sub : '+ mySubVideoDuration + ', start=' + myStartTime)
