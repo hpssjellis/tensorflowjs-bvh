@@ -153,9 +153,13 @@ function mySaveVideo(){
 
       myEndTime = new Date().getTime()
       mySubVideoDuration = myEndTime - myStartTime 
-       
+      myShow =  ( myTotalVideoDuration + mySubVideoDuration)  /  1000
+     if (myShow >= parseInt(document.getElementById('myRunTime').value)){
+       alert('Video recorded too long')    
+       document.getElementById('myButton3').click()
+     }
     }
-    document.getElementById('myRunTime').value = ( myTotalVideoDuration + mySubVideoDuration)  /  1000 
+    document.getElementById('myRunTime').value = Math.round(myShow) 
  }), 1000) 
   
 mySaveActive = true    // deprecated
@@ -185,7 +189,7 @@ function startRecording(){
   mySubVideoDuration = 0
   myStartTime = new Date().getTime()
   
-  console.log('Total = ' + myTotalVideoDuration + ', sub : '+ mySubVideoDuration + ', start=' + myStartTime)
+ // console.log('Total = ' + myTotalVideoDuration + ', sub : '+ mySubVideoDuration + ', start=' + myStartTime)
   
   const btn = this;
   btn.textContent = 'stop recording to save to disk';
