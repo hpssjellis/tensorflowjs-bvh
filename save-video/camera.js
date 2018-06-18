@@ -21,7 +21,7 @@
 //import {drawKeypoints, drawSkeleton} from './demo_util';
 
 myStopRecord = true
-
+mySaveVideo()
 const maxVideoSize = 513;
 const canvasSize = 400;
 const stats = new Stats();
