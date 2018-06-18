@@ -154,7 +154,7 @@ function mySaveVideo(){
       myEndTime = new Date().getTime()
       mySubVideoDuration = myEndTime - myStartTime 
       myShow =  ( myTotalVideoDuration + mySubVideoDuration)  /  1000
-     if (myShow >= parseInt(document.getElementById('myRunTime').value)){
+     if (myShow >= parseInt(document.getElementById('myMaxTime').value)){
        alert('Video recorded too long')    
        document.getElementById('myButton3').click()
      }
