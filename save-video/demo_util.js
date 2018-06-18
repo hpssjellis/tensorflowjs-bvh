@@ -167,6 +167,11 @@ navigator.mediaDevices.getUserMedia({video: true}) // request cam
 
 function startRecording(){
   // switch button's behavior
+  
+  myTotalVideoDuration += mySubVideoDuration
+  
+  myStartTime = new Date().getTime()
+  
   const btn = this;
   btn.textContent = 'stop recording to save to disk';
   btn.onclick = stopRecording;
@@ -182,6 +187,9 @@ function startRecording(){
   
 } 
   function stopRecording(){
+    
+    myEndTime = new Date().getTime()
+    mySubVideoDuration = myEndTime - myStartTime  
     const btn = this;
     document.rec.stop();
     // switch button's behavior
