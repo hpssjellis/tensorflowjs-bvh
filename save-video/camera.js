@@ -20,9 +20,7 @@
 
 //import {drawKeypoints, drawSkeleton} from './demo_util';
 
-myStopRecord = true
-mySaveActive = false
-myDoOnce = true
+
 myStoppedVideo = false
 myStartedVideo = false
 myFirstTime = false
