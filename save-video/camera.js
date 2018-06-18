@@ -22,6 +22,7 @@
 
 myStopRecord = true
 mySaveActive = false
+myDoOnce = true
 
 const maxVideoSize = 513;
 const canvasSize = 400;
@@ -214,7 +215,7 @@ function detectPoseInRealTime(video, net) {
         
    // possible insert saving???   
        
-        
+    
        console.log('single') 
         
         
@@ -251,9 +252,10 @@ function detectPoseInRealTime(video, net) {
         
         
          // possible insert saving???     
-        
-       console.log('multi') 
-        
+       if (myDoOnce){ 
+           myDoOnce = false
+          console.log('multi') 
+       } 
         
       /*  
       if ((myStopRecord) && (mySaveActive)){
