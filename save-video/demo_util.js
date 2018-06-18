@@ -137,3 +137,79 @@ function drawBoundingBox(keypoints, ctx) {
 
   ctx.stroke();
 }
+
+
+
+
+
+// imported saving functions
+
+
+
+
+const vid = document.querySelector('video');
+
+
+navigator.mediaDevices.getUserMedia({video: true}) // request cam
+.then(stream => {
+  vid.srcObject = stream; // don't use createObjectURL(MediaStream)
+  return vid.play(); // returns a Promise
+})
+.then(()=>{ // enable the button
+  const btn = document.querySelector('button');
+  btn.disabled = false;
+  btn.onclick = startRecording;
+});
+
+
+
+
+
+function startRecording(){
+  // switch button's behavior
+  const btn = this;
+  btn.textContent = 'stop recording';
+  btn.onclick = stopRecording;
+  
+  const chunks = []; // here we will save all video data
+  
+  const rec = new MediaRecorder(vid.srcObject);
+  // this event contains our data
+  rec.ondataavailable = e => chunks.push(e.data);
+  // when done, concatenate our chunks in a single Blob
+  rec.onstop = e => download(new Blob(chunks));
+  rec.start();
+  
+  
+  function stopRecording(){
+    rec.stop();
+    // switch button's behavior
+    btn.textContent = 'start recording';
+    btn.onclick = startRecording;
+  }
+}
+
+
+
+function download(blob){
+  // uses the <a download> to download a Blob
+  let a = document.createElement('a'); 
+  a.href = URL.createObjectURL(blob);
+  a.download = 'recorded.webm';
+  document.body.appendChild(a);
+  a.click();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
