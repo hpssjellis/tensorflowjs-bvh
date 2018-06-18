@@ -225,14 +225,14 @@ function startRecording(){
 
 
 function download(blob){
-  if (myGoodToSave){
+
     // uses the <a download> to download a Blob
     let a = document.createElement('a'); 
     a.href = URL.createObjectURL(blob);
     a.download = 'recorded.webm';
     document.body.appendChild(a);
     a.click();
- } 
+
 }
 
 
