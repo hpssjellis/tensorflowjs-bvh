@@ -31,7 +31,7 @@ myStartTime = 0
 myEndTime = 0
 myVideoSaveRunning = false
 myShow = 0
-myNoMore = false
+myGoodToSave = true
 
 
 const maxVideoSize = 513;
