@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PoseNet - Camera Feed Demo</title>
+    <style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: black;
+    }
+
+    .footer-text {
+        max-width: 600px;
+        text-align: center;
+        margin: auto;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="loading">
+        Loading the model...
+    </div>
+    <div id='main' style='display:none'>
+        <video autoplay="true" id="video" style=" -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        display: none;
+        ">
+        </video>
+        <canvas id="output" />
+    </div>
+    
+    
+Check for timed Storage (Will store a lot of data!)<br>
+    <input id="myTimed" type=checkbox  onchange="{    
+
+ if (document.getElementById('myTimed').checked == true){
+    //alert('checked')
+    
+   document.getElementById('myCountDown').value  = document.getElementById('myDuration').value
+   document.getElementById('myBackup01').value  = ''  // delete the output textarea                                              
+   document.myInterval = setInterval(( function(){
+        document.getElementById('myCountDown').value = parseInt(document.getElementById('myCountDown').value) - 1
+        if (parseInt(document.getElementById('myCountDown').value) <= 0){  
+            document.getElementById('myTimed').checked = false
+           // document.getElementById('myBackup01').value   =  document.getElementById('myDiv01').value     // store the data                            
+            clearInterval(document.myInterval)
+            stopCurrentVideoStream()                 // activate the function to stop the video so we can use the page                                   
+        }
+    
+    }  ), 1000)   // count down once a second
+  } else {
+       clearInterval(document.myInterval)   // just to be on the safe side
+       //alert('not checked')
+    }
+}">
+Record for<input id="myDuration" type=number value=6> seconds.<br>
+Count Down Timer: <input type=number id="myCountDown" value=0> <br>
+    
+    
+    
+<textarea rows=10 cols=100 wrap=false id="myDiv01"></textarea>  <br>
+Following is stored data that you can cut and paste elsewhere<br>
+<textarea rows=200 cols=100 wrap=false id="myBackup01"></textarea>     
+    <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    <div class="footer">
+        <div class="footer-text">
+            <p>
+                
+                <br>   </p>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.2/build/dat.gui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.4"> </script> 
+    <script src="https://unpkg.com/@tensorflow-models/posenet"></script> 
+   
+    
+    
+    
+    
+    <script src="demo_util.js "></script>    
+    <script src="stats.min.js"></script>   
+    <script src="camera.js"></script>
+</body>
+
+</html>
