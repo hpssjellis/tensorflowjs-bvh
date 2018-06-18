@@ -146,7 +146,7 @@ function drawBoundingBox(keypoints, ctx) {
 
 
 function mySaveVideo(){
-
+mySaveActive = true
 document.vid = document.querySelector('video');
 
 
