@@ -23,6 +23,9 @@
 myStopRecord = true
 mySaveActive = false
 myDoOnce = true
+myStoppedVideo = false
+myStartedVideo = false
+myFirstTime = false
 
 const maxVideoSize = 513;
 const canvasSize = 400;
@@ -258,11 +261,22 @@ function detectPoseInRealTime(video, net) {
         
          // possible insert saving???     
        if (myTemp == '[]'){ 
-           myDoOnce = false
-          console.log('Stopped') 
-       } else {
-       
-          console.log('Started') 
+         if (myStartedVideo){myFirstTime = true}
+         myStoppedVideo = true
+         myStartedVideo = false
+         if (myFirstTime){
+             myFirstTime = false
+             console.log('Video Stopped')
+          } 
+ 
+       } else {    
+           if (myStoppedVideo){myFirstTime = true}
+           myStoppedVideo = false
+           myStartedVideo = true
+          if (myFirstTime){
+             myFirstTime = false
+             console.log('Video Started')
+          } 
        }
         
       /*  
