@@ -147,10 +147,11 @@ function drawBoundingBox(keypoints, ctx) {
 
 function mySaveVideo(){
   
- document.myStopwatch = setInterval((function() {  
+ document.myStopwatch = setInterval((function() { 
+     mySub = 0
      const  myTempTime = new Date().getTime()
      if (myStartedVideo){
-         const mySub = myTempTime - myStartTime 
+         mySub = myTempTime - myStartTime 
          console.log('mysub')
          }
     document.getElementById('myRunTime').value = ( myTotalVideoDuration + mySub)  /  1000 
