@@ -168,7 +168,7 @@ navigator.mediaDevices.getUserMedia({video: true}) // request cam
 function startRecording(){
   // switch button's behavior
   const btn = this;
-  btn.textContent = 'stop recording';
+  btn.textContent = 'stop recording to save to disk';
   btn.onclick = stopRecording;
   
   const chunks = []; // here we will save all video data
