@@ -278,7 +278,7 @@ async function bindPage() {
   const video = await loadVideo(cameras[0].deviceId);
 
   setupGui(cameras, net);
-  setupFPS();
+ // setupFPS();
   detectPoseInRealTime(video, net);
 }
 
