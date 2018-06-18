@@ -150,7 +150,9 @@ function mySaveVideo(){
  document.myStopwatch = setInterval((function() { 
    
    if (myVideoSaveRunning){
-      console.log('running') 
+
+      myEndTime = new Date().getTime()
+      mySubVideoDuration = myEndTime - myStartTime 
        
     }
     document.getElementById('myRunTime').value = ( myTotalVideoDuration + mySubVideoDuration)  /  1000 
