@@ -185,7 +185,7 @@ function detectPoseInRealTime(video, net) {
       guiState.changeToArchitecture = null;
     }
 
-    stats.begin();
+   // stats.begin();
 
     const imageScaleFactor = guiState.input.imageScaleFactor;
     const outputStride = Number(guiState.input.outputStride);
