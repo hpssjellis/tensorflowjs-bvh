@@ -25,6 +25,9 @@ myStoppedVideo = false
 myStartedVideo = false
 myFirstTime = false
 
+myTotalVideoDuration = 0
+mySubVideoDuration = 0
+
 const maxVideoSize = 513;
 const canvasSize = 400;
 const stats = new Stats();
