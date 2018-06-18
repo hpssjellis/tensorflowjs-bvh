@@ -156,6 +156,7 @@ function mySaveVideo(){
       myShow =  ( myTotalVideoDuration + mySubVideoDuration)  /  1000
      if (myShow >= parseInt(document.getElementById('myMaxTime').value)){
        document.getElementById('myButton3').click()
+       myGoodToSave = false
        alert('Video recorded too long')   
      }
     }
@@ -183,7 +184,7 @@ navigator.mediaDevices.getUserMedia({video: true}) // request cam
 
 function startRecording(){
   // switch button's behavior
-  
+  if (myGoodToSave){
   myVideoSaveRunning = true
   myTotalVideoDuration += mySubVideoDuration
   mySubVideoDuration = 0
@@ -206,6 +207,8 @@ function startRecording(){
   document.rec.onstop = e => download(new Blob(chunks));
   document.rec.start();
   
+}
+  
 } 
   function stopRecording(){
     myVideoSaveRunning = false 
@@ -222,12 +225,14 @@ function startRecording(){
 
 
 function download(blob){
-  // uses the <a download> to download a Blob
-  let a = document.createElement('a'); 
-  a.href = URL.createObjectURL(blob);
-  a.download = 'recorded.webm';
-  document.body.appendChild(a);
-  a.click();
+  if (myGoodToSave){
+    // uses the <a download> to download a Blob
+    let a = document.createElement('a'); 
+    a.href = URL.createObjectURL(blob);
+    a.download = 'recorded.webm';
+    document.body.appendChild(a);
+    a.click();
+ } 
 }
 
 
