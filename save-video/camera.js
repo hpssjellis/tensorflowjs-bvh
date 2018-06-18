@@ -257,10 +257,13 @@ function detectPoseInRealTime(video, net) {
         
         
          // possible insert saving???     
-       if (myDoOnce){ 
+       if (myTemp == '[]'){ 
            myDoOnce = false
-          console.log('multi') 
-       } 
+          console.log('Stopped') 
+       } else {
+       
+          console.log('Started') 
+       }
         
       /*  
       if ((myStopRecord) && (mySaveActive)){
