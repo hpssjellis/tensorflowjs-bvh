@@ -146,7 +146,12 @@ function drawBoundingBox(keypoints, ctx) {
 
 
 function mySaveVideo(){
-mySaveActive = true
+  
+ document.myStopwatch = setInterval((function() {
+    document.getElementById('myRunTime').value = new Date().getTime() 
+ }), 1000) 
+  
+mySaveActive = true    // deprecated
 document.vid = document.querySelector('video');
 
 
