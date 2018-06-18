@@ -315,7 +315,7 @@ function detectPoseInRealTime(video, net) {
       }
     });
 
-    stats.end();
+   // stats.end();
 
     requestAnimationFrame(poseDetectionFrame);
   }
