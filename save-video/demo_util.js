@@ -182,6 +182,7 @@ function startRecording(){
   
 } 
   function stopRecording(){
+    const btn = this;
     document.rec.stop();
     // switch button's behavior
     btn.textContent = 'start recording';
