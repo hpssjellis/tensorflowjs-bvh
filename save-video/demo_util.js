@@ -145,7 +145,7 @@ function drawBoundingBox(keypoints, ctx) {
 // imported saving functions
 
 
-
+function mySaveVideo(){
 
 const vid = document.querySelector('video');
 
@@ -161,7 +161,7 @@ navigator.mediaDevices.getUserMedia({video: true}) // request cam
   btn.onclick = startRecording;
 });
 
-
+}
 
 
 
