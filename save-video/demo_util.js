@@ -148,12 +148,7 @@ function drawBoundingBox(keypoints, ctx) {
 function mySaveVideo(){
   
  document.myStopwatch = setInterval((function() { 
-     mySub = 0
-     const  myTempTime = new Date().getTime()
-     if (!myStartedVideo){
-         mySub = myTempTime - myStartTime 
-         console.log(mySub+',  '+myStartedVideo)
-         }
+
     document.getElementById('myRunTime').value = ( myTotalVideoDuration + mySub)  /  1000 
  }), 1000) 
   
@@ -193,7 +188,11 @@ function startRecording(){
   
   document.rec = new MediaRecorder(document.vid.srcObject);
   // this event contains our data
-  document.rec.ondataavailable = e => chunks.push(e.data);
+  document.rec.ondataavailable = e => {
+      chunks.push(e.data);
+      myEndTime = new Date().getTime()
+      mySubVideoDuration = myEndTime - myStartTime  
+   }
   // when done, concatenate our chunks in a single Blob
   document.rec.onstop = e => download(new Blob(chunks));
   document.rec.start();
