@@ -152,7 +152,7 @@ function mySaveVideo(){
      const  myTempTime = new Date().getTime()
      if (myStartedVideo){
          mySub = myTempTime - myStartTime 
-         console.log('mysub')
+         console.log(mySub+',  '+myStartedVideo)
          }
     document.getElementById('myRunTime').value = ( myTotalVideoDuration + mySub)  /  1000 
  }), 1000) 
