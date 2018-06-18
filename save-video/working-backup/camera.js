@@ -27,7 +27,7 @@ myFirstTime = false
 
 const maxVideoSize = 513;
 const canvasSize = 400;
-const stats = new Stats();
+//const stats = new Stats();
 
 async function getCameras() {
   const devices = await navigator.mediaDevices.enumerateDevices();
