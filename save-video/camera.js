@@ -21,7 +21,8 @@
 //import {drawKeypoints, drawSkeleton} from './demo_util';
 
 myStopRecord = true
-mySaveVideo()
+mySaveActive = false
+
 const maxVideoSize = 513;
 const canvasSize = 400;
 const stats = new Stats();
@@ -212,7 +213,7 @@ function detectPoseInRealTime(video, net) {
         guiState.singlePoseDetection.minPartConfidence);
         
    // possible insert saving???     
-      if (myStopRecord){
+      if ((myStopRecord) && (mySaveActive)){
              myStopRecord = false
              startRecording()
           } else{            
@@ -243,7 +244,7 @@ function detectPoseInRealTime(video, net) {
         
         
          // possible insert saving???     
-      if (myStopRecord){
+      if ((myStopRecord) && (mySaveActive)){
              myStopRecord = false
              startRecording()
           } else{            
