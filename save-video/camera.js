@@ -218,12 +218,27 @@ function detectPoseInRealTime(video, net) {
         
    // possible insert saving???   
        
-    
-       if (myDoOnce){ 
-           myDoOnce = false
-          console.log('Single') 
-       } 
-        
+         // possible insert saving???     
+       if (myTemp == '[]'){ 
+         if (myStartedVideo){myFirstTime = true}
+         myStoppedVideo = true
+         myStartedVideo = false
+         if (myFirstTime){
+             myFirstTime = false
+             console.log('Video Stopped')
+           document.getElementById('myButton3').click()
+          } 
+ 
+       } else {    
+           if (myStoppedVideo){myFirstTime = true}
+           myStoppedVideo = false
+           myStartedVideo = true
+          if (myFirstTime){
+             myFirstTime = false
+             console.log('Video Started')            
+             document.getElementById('myButton3').click()
+          } 
+       }
         
        /* 
         
