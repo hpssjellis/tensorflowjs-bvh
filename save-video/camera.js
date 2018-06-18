@@ -216,7 +216,10 @@ function detectPoseInRealTime(video, net) {
    // possible insert saving???   
        
     
-       console.log('single') 
+       if (myDoOnce){ 
+           myDoOnce = false
+          console.log('Single') 
+       } 
         
         
        /* 
