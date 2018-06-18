@@ -27,6 +27,8 @@ myFirstTime = false
 
 myTotalVideoDuration = 0
 mySubVideoDuration = 0
+myStartTime = 0
+myEndTime = 0
 
 const maxVideoSize = 513;
 const canvasSize = 400;
