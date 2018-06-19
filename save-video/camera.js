@@ -226,9 +226,7 @@ function detectPoseInRealTime(video, net) {
         guiState.singlePoseDetection.minPartConfidence);
         
    // possible insert saving???   
-       
-         // possible insert saving???     
-       if (myTemp == '[]'){ 
+ if (myTemp == '[]'){ 
          if (myStartedVideo){myFirstTime = true}
          myStoppedVideo = true
          myStartedVideo = false
@@ -249,17 +247,6 @@ function detectPoseInRealTime(video, net) {
           } 
        }
         
-       /* 
-        
-      if ((myStopRecord) && (mySaveActive)){
-             myStopRecord = false
-             startRecording()
-          } else{            
-             myStopRecord = true
-             stopRecording()
-          }
-        
-        */
       break;
     case 'multi-pose':
       poses = await guiState.net.estimateMultiplePoses(video, imageScaleFactor, flipHorizontal, outputStride,
@@ -303,16 +290,7 @@ function detectPoseInRealTime(video, net) {
           } 
        }
         
-      /*  
-      if ((myStopRecord) && (mySaveActive)){
-             myStopRecord = false
-             startRecording()
-          } else{            
-             myStopRecord = true
-             stopRecording()
-          }
-          
-       */ 
+ 
         
       break;
     }
