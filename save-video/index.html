@@ -24,9 +24,17 @@
     <div id="loading">
         Loading the model...
     </div>
-  <input type=button style="visibility:visible" value="Allow Camera Saving" onclick="{                                       
-   mySaveVideo()
-   this.style.visibility = 'hidden'
+  <input type=button  value="Allow Camera Saving" onclick="{                                       
+   if (this.value == 'Allow Camera Saving'){
+    mySaveVideo()
+    myGoodToSave = true
+    this.value = 'Stop Camera Saving'
+} else{
+   myGoodToSave = false   
+   this.value = 'Allow Camera Saving'                                                        
+}
+                                              
+
 }">   
 <button disabled id="myButton3">
   Manual Record Video</button>  <br> 
