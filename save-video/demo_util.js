@@ -232,7 +232,7 @@ function download(blob){
     a.download = 'recorded.webm';
     document.body.appendChild(a);
     a.click();
-
+    // window.URL.revokeObjectURL(a.href);
 }
 
 
