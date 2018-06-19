@@ -233,6 +233,7 @@ function download(blob){
     document.body.appendChild(a);
     a.click();
     // window.URL.revokeObjectURL(a.href);
+    document.body.removeChild(a);
 }
 
 
