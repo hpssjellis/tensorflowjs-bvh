@@ -229,7 +229,24 @@ function download(blob){
     // uses the <a download> to download a Blob
     let a = document.createElement('a'); 
     a.href = URL.createObjectURL(blob);
-    a.download = 'recorded.webm';
+  
+
+
+   var date = new Date();
+   var year = date.getFullYear();
+   var month = date.getMonth() + 1;      // "+ 1" becouse the 1st month is 0
+   var day = date.getDate();
+   var hour = date.getHours();
+   var minutes = date.getMinutes();
+   var secconds = date.getSeconds()
+
+   var seedatetime = month+ '.'+ day+ '.'+ year+ '-'+ hour+ ':'+ minutes+ ':'+ secconds;
+  
+  
+  
+  
+   // a.download = 'recorded.webm';
+    a.download = 'video'+seedatetime+'.webm';
     document.body.appendChild(a);
     a.click();
     // window.URL.revokeObjectURL(a.href);
